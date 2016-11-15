@@ -1,16 +1,19 @@
-function MusicCtrl(GetMusicData, $filter) {
+function MusicCtrl(MusicData) {
   'ngInject';
   const vm = this;
 
-  const convertDates = $filter('ConvertDatesFilter');
-
   vm.title = 'Music';
-  vm.albums = [];
+  vm.data = {
+    albums: []
+  };
 
-  GetMusicData()
-    .then(({ data }) => {
-      data = convertDates(data, 'production_date');
-      vm.albums = data;
+  vm.sortBy = (key, desc) => {
+    vm.data.albums = MusicData.sortBy(key, desc);
+  };
+
+  MusicData.get()
+    .then(data => {
+      vm.data.albums = data;
     })
     .catch(
       error => console.error(error)

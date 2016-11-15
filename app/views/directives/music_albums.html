@@ -1,3 +1,34 @@
-<div class="example-directive">
-  {{ albums.length }}
+<div class="music-table">
+  <spinner-directive
+    ng-show="data.albums.length === 0"
+    ng-class="{ show: show }"
+  ></spinner-directive>
+  <table ng-if="data.albums.length > 0">
+    <thead>
+      <th
+        class="music-table-head-element"
+        ng-click="sortByInOrder('artist')">
+        Artist
+      </th>
+      <th
+        class="music-table-head-element"
+        ng-click="sortByInOrder('title')">
+        Album Title
+      </th>
+      <th
+        class="music-table-head-element"
+        ng-click="sortByInOrder('productionDate')">
+        Production Date
+      </th>
+      <th class="music-table-head-element">
+        Cover
+      </th>
+    </thead>
+    <tr ng-repeat="value in data.albums">
+      <td>{{ value.artist }}</td>
+      <td>{{ value.title }}</td>
+      <td>{{ value.productionDate.toDateString() }}</td>
+      <td><img src="images/{{ value.cover }}"/></td>
+    </tr>
+  </table>
 </div>

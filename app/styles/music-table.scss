@@ -1,0 +1,13 @@
+.music-table {
+    min-height: 300px;
+}
+
+.music-table-head-element[ng-click] {
+    cursor: pointer;
+    user-select: none;
+}
+
+.music-table-spinner-container {
+    width: 100%;
+    min-height: 300px;
+}

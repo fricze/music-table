@@ -18,7 +18,8 @@ const requires = [
   'app.filters',
   'app.controllers',
   'app.factories',
-  'app.directives'
+  'app.directives',
+  require('angular-animate')
 ];
 
 // mount on window for testing

@@ -6,7 +6,7 @@ function ConvertDatesFilter() {
   };
 
   return (collection, key) => collection.map(element => {
-    element.data = convertDate(element[key]);
+    element[key] = convertDate(element[key]);
 
     return element;
   });
