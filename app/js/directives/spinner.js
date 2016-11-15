@@ -1,10 +1,12 @@
-function SpinnerDirective() {
+function SpinnerDirective($document) {
+  'ngInject';
+
   return {
     restrict: 'EA',
     templateUrl: 'directives/spinner.html',
     replace: true,
     link: (_, element) => {
-      element.parent().css('position', 'relative');
+      $document[0].body.appendChild(element[0]);
     }
   };
 }

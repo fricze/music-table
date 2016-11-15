@@ -1,5 +1,6 @@
 .music-table {
     min-height: 300px;
+    position: relative;
 }
 
 .music-table-head-element[ng-click] {
@@ -7,7 +8,7 @@
     user-select: none;
 }
 
-.music-table-spinner-container {
-    width: 100%;
-    min-height: 300px;
+.music-table-head-element {
+    text-align: left;
+    padding-right: 0px;
 }
