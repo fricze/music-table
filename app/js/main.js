@@ -8,7 +8,7 @@ import 'angular-ui-router';
 import './templates';
 import './filters';
 import './controllers';
-import './services';
+import './factories';
 import './directives';
 
 // create and bootstrap application
@@ -17,7 +17,7 @@ const requires = [
   'templates',
   'app.filters',
   'app.controllers',
-  'app.services',
+  'app.factories',
   'app.directives'
 ];
 

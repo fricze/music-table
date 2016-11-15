@@ -23,7 +23,7 @@ gulp.task('browserSync', function() {
     },
   	port: config.browserPort,
   	ui: {
-    	port: config.UIPort
+      port: config.UIPort
     },
     ghostMode: {
       links: false

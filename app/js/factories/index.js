@@ -1,8 +1,8 @@
 import angular from 'angular';
 
 const bulk = require('bulk-require');
-const servicesModule = angular.module('app.services', []);
-const services = bulk(__dirname, ['./**/!(*index|*.spec).js']);
+const factoriesModule = angular.module('app.factories', []);
+const factories = bulk(__dirname, ['./**/!(*index|*.spec).js']);
 
 function declare(serviceMap) {
   Object.keys(serviceMap).forEach((key) => {
@@ -13,13 +13,13 @@ function declare(serviceMap) {
     }
 
     if (item.fn && typeof item.fn === 'function') {
-      servicesModule.service(item.name, item.fn);
+      factoriesModule.factory(item.name, item.fn);
     } else {
       declare(item);
     }
   });
 }
 
-declare(services);
+declare(factories);
 
-export default servicesModule;
+export default factoriesModule;

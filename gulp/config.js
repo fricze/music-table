@@ -1,5 +1,4 @@
 export default {
-
   browserPort: 3000,
   UIPort: 3001,
   testPort: 3002,
@@ -26,6 +25,11 @@ export default {
     dest: 'build/images'
   },
 
+  data: {
+    src: 'app/data/**/*',
+    dest: 'build/data'
+  },
+
   fonts: {
     src: ['app/fonts/**/*'],
     dest: 'build/fonts'
@@ -42,7 +46,8 @@ export default {
     'otf',
     'ttc',
     'ttf',
-    'woff2?'
+    'woff2?',
+    'json'
   ],
 
   views: {
